@@ -1,0 +1,5 @@
+@model Microsoft.AspNetCore.Identity.IdentityUser
+@{ ViewData["Title"] = "Detalle de usuario"; }
+<h1>Detalle de usuario</h1>
+<dl class="row"><dt class="col-sm-3">Correo</dt><dd class="col-sm-9">@Model.Email</dd><dt class="col-sm-3">Usuario</dt><dd class="col-sm-9">@Model.UserName</dd><dt class="col-sm-3">Confirmado</dt><dd class="col-sm-9">@(Model.EmailConfirmed ? "Sí" : "No")</dd><dt class="col-sm-3">Roles</dt><dd class="col-sm-9">@string.Join(", ", (IEnumerable<string>)ViewBag.Roles)</dd></dl>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a> <a asp-action="Index" class="btn btn-secondary">Volver</a>

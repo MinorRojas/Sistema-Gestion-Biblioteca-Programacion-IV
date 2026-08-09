@@ -1,0 +1,5 @@
+@model Biblioteca.Web.Models.ViewModels.UsuarioCrearViewModel
+@{ ViewData["Title"] = "Crear usuario"; }
+<h1>Crear usuario</h1>
+<form asp-action="Create" method="post"><div asp-validation-summary="ModelOnly" class="text-danger"></div><div class="mb-3"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control" /><span asp-validation-for="Email" class="text-danger"></span></div><div class="mb-3"><label asp-for="Password" class="form-label">Contraseña</label><input asp-for="Password" class="form-control" /><span asp-validation-for="Password" class="text-danger"></span></div><div class="form-check mb-3"><input asp-for="EsAdministrador" class="form-check-input" /><label asp-for="EsAdministrador" class="form-check-label">Administrador</label></div><button class="btn btn-success">Crear</button> <a asp-action="Index" class="btn btn-secondary">Cancelar</a></form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

@@ -1,0 +1,21 @@
+@model Biblioteca.Web.Models.ViewModels.PrestamoCreateViewModel
+@{
+    ViewData["Title"] = "Nuevo préstamo";
+}
+<h1>Registrar préstamo</h1>
+<form asp-action="Create" method="post" onsubmit="return confirm('¿Desea registrar este libro?');">
+    <div class="mb-3">
+        <label class="form-label">Libro</label>
+        <select asp-for="LibroId" asp-items="Model.Libros" class="form-select"><option value="">Seleccione...</option></select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Usuario</label>
+        <select asp-for="UsuarioId" asp-items="Model.Usuarios" class="form-select"><option value="">Seleccione...</option></select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="FechaDevolucionEsperada" class="form-label">Fecha de devolución esperada</label>
+        <input asp-for="FechaDevolucionEsperada" type="date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+    </div>
+    <button class="btn btn-primary">Registrar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

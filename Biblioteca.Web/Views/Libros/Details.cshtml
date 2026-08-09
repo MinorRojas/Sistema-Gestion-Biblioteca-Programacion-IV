@@ -1,0 +1,5 @@
+@model Biblioteca.Web.Models.Entities.Libro
+@{ ViewData["Title"] = "Detalle del libro"; }
+<h1>@Model.Titulo</h1>
+<dl class="row"><dt class="col-sm-3">ISBN</dt><dd class="col-sm-9">@Model.Isbn</dd><dt class="col-sm-3">Autor</dt><dd class="col-sm-9">@Model.Autor.Nombre</dd><dt class="col-sm-3">Categoría</dt><dd class="col-sm-9">@Model.Categoria.Nombre</dd><dt class="col-sm-3">Año</dt><dd class="col-sm-9">@Model.AnioPublicacion</dd><dt class="col-sm-3">Sinopsis</dt><dd class="col-sm-9">@Model.Sinopsis</dd><dt class="col-sm-3">Ejemplares</dt><dd class="col-sm-9">@Model.CantidadEjemplares</dd><dt class="col-sm-3">Disponibles</dt><dd class="col-sm-9">@Model.EjemplaresDisponibles</dd></dl>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a> <a asp-action="Index" class="btn btn-secondary">Volver</a>

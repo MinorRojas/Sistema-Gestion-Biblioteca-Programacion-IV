@@ -1,0 +1,19 @@
+@model IEnumerable<Biblioteca.Web.Models.Entities.Libro>
+@{ ViewData["Title"] = "Gestión de libros"; }
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Gestión de libros</h1>
+    <a asp-action="Create" class="btn btn-primary">Crear libro</a>
+</div>
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-10"><input name="busqueda" value="@ViewBag.Busqueda" class="form-control" placeholder="Buscar por título, ISBN o autor" /></div>
+    <div class="col-md-2 d-grid"><button class="btn btn-outline-primary">Buscar</button></div>
+</form>
+<table class="table table-striped table-bordered align-middle">
+<thead><tr><th>Título</th><th>ISBN</th><th>Autor</th><th>Categoría</th><th>Total</th><th>Disponibles</th><th>Acciones</th></tr></thead>
+<tbody>
+@foreach (var libro in Model)
+{
+<tr><td>@libro.Titulo</td><td>@libro.Isbn</td><td>@libro.Autor.Nombre</td><td>@libro.Categoria.Nombre</td><td>@libro.CantidadEjemplares</td><td>@libro.EjemplaresDisponibles</td><td class="text-nowrap"><a asp-action="Details" asp-route-id="@libro.Id" class="btn btn-info btn-sm">Ver</a> <a asp-action="Edit" asp-route-id="@libro.Id" class="btn btn-warning btn-sm">Editar</a> <a asp-action="Delete" asp-route-id="@libro.Id" class="btn btn-danger btn-sm">Eliminar</a></td></tr>
+}
+</tbody></table>
+@if (!Model.Any()) { <div class="alert alert-info">No hay libros registrados.</div> }

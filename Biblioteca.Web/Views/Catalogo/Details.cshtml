@@ -1,0 +1,3 @@
+@model LibroDetalleViewModel
+@{ViewData["Title"]="Detalle";}
+<a asp-action="Index" class="btn btn-link px-0">← Volver al catálogo</a><div class="card shadow-sm"><div class="card-body p-4"><h1>@Model.Titulo</h1><p class="lead">@Model.Autor</p><dl class="row"><dt class="col-sm-3">Categoría</dt><dd class="col-sm-9">@Model.Categoria</dd><dt class="col-sm-3">ISBN</dt><dd class="col-sm-9">@(Model.Isbn??"No registrado")</dd><dt class="col-sm-3">Año</dt><dd class="col-sm-9">@Model.AnioPublicacion</dd><dt class="col-sm-3">Disponibilidad</dt><dd class="col-sm-9">@(Model.Disponible?$"{Model.EjemplaresDisponibles} ejemplar(es) disponible(s)":"No disponible")</dd></dl><h5>Sinopsis</h5><p>@(Model.Sinopsis??"Sin sinopsis registrada.")</p></div></div>

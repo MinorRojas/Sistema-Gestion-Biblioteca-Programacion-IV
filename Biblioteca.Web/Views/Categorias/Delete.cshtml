@@ -1,0 +1,2 @@
+@model Categoria
+@{ViewData["Title"]="Eliminar categoría";}<h1>Eliminar categoría</h1><div class="alert alert-warning">¿Desea eliminar <strong>@Model.Nombre</strong>?</div><form asp-action="Delete" asp-route-id="@Model.Id" method="post"><button class="btn btn-danger">Sí, eliminar</button> <a asp-action="Index" class="btn btn-secondary">Cancelar</a></form>

@@ -1,0 +1,2 @@
+@model Autor
+@{ViewData["Title"]="Eliminar autor";}<h1>Eliminar autor</h1><div class="alert alert-warning">¿Desea eliminar a <strong>@Model.Nombre</strong>?</div><form asp-action="Delete" asp-route-id="@Model.Id" method="post"><button class="btn btn-danger">Sí, eliminar</button> <a asp-action="Index" class="btn btn-secondary">Cancelar</a></form>

@@ -1,0 +1,5 @@
+@model Biblioteca.Web.Models.Entities.Libro
+@{ ViewData["Title"] = "Crear libro"; }
+<h1>Crear libro</h1>
+<form asp-action="Create" method="post"><partial name="_Formulario" model="Model" /><button class="btn btn-success">Guardar</button> <a asp-action="Index" class="btn btn-secondary">Cancelar</a></form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

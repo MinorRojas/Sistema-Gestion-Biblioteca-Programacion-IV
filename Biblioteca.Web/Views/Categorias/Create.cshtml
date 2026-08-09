@@ -1,0 +1,23 @@
+@model Categoria
+
+@{
+    ViewData["Title"] = "Crear categoría";
+}
+
+<h1>Crear categoría</h1>
+
+<form asp-action="Create" method="post">
+    @await Html.PartialAsync("_Formulario", Model)
+
+    <button type="submit" class="btn btn-primary">
+        Guardar
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Cancelar
+    </a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
