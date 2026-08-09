@@ -1,5 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace Biblioteca.Web.Models.Entities;
+
 public class Libro
 {
     public int Id { get; set; }
@@ -10,7 +13,9 @@ public class Libro
     public int CantidadEjemplares { get; set; }
     public int EjemplaresDisponibles { get; set; }
     public int AutorId { get; set; }
+    [ValidateNever]
     public Autor Autor { get; set; } = null!;
     public int CategoriaId { get; set; }
+    [ValidateNever]
     public Categoria Categoria { get; set; } = null!;
 }
