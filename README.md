@@ -31,7 +31,7 @@ consulta y un módulo administrativo con autenticación.
 
 1. Clonar el repositorio:
 ```bash
-   git clone https://github.com/MinorRojas/sistema_gestion_biblioteca-programacion_IV.git
+   git clone https://github.com/MinorRojas/Sistema-Gestion-Biblioteca-Programacion-IV.git
 ```
 2. Abrir la solución en Visual Studio.
 3. Restaurar los paquetes NuGet (se hace automáticamente al abrir el proyecto, o clic derecho en la solución → Restore NuGet Packages).
